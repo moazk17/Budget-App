@@ -9,3 +9,15 @@ define('FILES_PATH', $root . 'transaction_files' . DIRECTORY_SEPARATOR);
 define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 
 /* YOUR CODE (Instructions in README.md) */
+require APP_PATH . "App.php";
+
+$files = getTransactionFiles(FILE_PATH);
+
+$transactions = [];
+foreach($files as $file) {
+    $transactions = array_merge($transactions, getTransactions($file));
+}
+
+$x = 0;
+var_dump($x);
+
